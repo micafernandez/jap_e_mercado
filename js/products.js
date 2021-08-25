@@ -1,4 +1,4 @@
-var currentProductsArray = [];
+// var currentProductsArray = [];
 
 // paso el json de productos a un JS objet
 fetch('https://japdevdep.github.io/ecommerce-api/product/all.json')
@@ -31,6 +31,7 @@ fetch('https://japdevdep.github.io/ecommerce-api/product/all.json')
 
          }
         showProductsList(); 
+
         
   });
 
