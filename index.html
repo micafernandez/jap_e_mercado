@@ -39,7 +39,15 @@
       <form name="myForm" action="home.html" onsubmit="return validateForm()" method="post" required>
         <input type="text" id="login" class="fadeIn second" name="fname" placeholder="Usuario">
         <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-        <input type="submit" class="fadeIn fourth" value="Ingresar"> <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        <input type="submit" class="fadeIn fourth" value="Ingresar"> 
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">¿Olvidaste la contraseña?</a>
+      </div>
+
+      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
         <script>
           function onSignIn(googleUser) {
             // Useful data for your client-side scripts:
@@ -56,12 +64,6 @@
             console.log("ID Token: " + id_token);
           }
         </script>
-      </div>
-      </form>
-  
-      <!-- Remind Passowrd -->
-      <div id="formFooter">
-        <a class="underlineHover" href="#">¿Olvidaste la contraseña?</a>
       </div>
       
   </div>
