@@ -30,11 +30,14 @@
       </div>
   
       <!-- Login Form -->
-      <form name="myForm" action="home.html" onsubmit="return validateForm()" method="post" required>
-        <input type="text" id="login" class="fadeIn second" name="fname" placeholder="Usuario">
-        <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-        <input type="submit" class="fadeIn fourth" value="Ingresar"> 
+      <form name="loginform"   method="post" required>
+        <input type="text" id="userName" class="fadeIn second" name="userName" placeholder="Usuario" value=""/>
+        <input type="password" id="userPw" class="fadeIn third" name="password" placeholder="Contraseña" value=""/>
+      
       </form>
+      <input id="ingresar" type="button"  onclick="validateForm()"   class="fadeIn fourth" value="Ingresar" > 
+
+
       <div class="g-signin2" data-onsuccess="onSignIn" data-theme="light"></div>
       <script>
         function onSignIn(googleUser) {
@@ -56,6 +59,10 @@
   </div>
 
   <script src="js/init.js"></script>
-  <script src="js/login.js"></script>
+  <script src="js/login.js"> </script>´
+
+
 </body>
+
+
 </html>
