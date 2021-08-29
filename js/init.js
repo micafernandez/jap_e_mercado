@@ -50,5 +50,13 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
 
+function showUser() {
+
+  let usuario = localStorage.getItem("userName");
+  let htmlContentToAppend = usuario ;
+  document.getElementById("user").innerHTML += htmlContentToAppend;
+}
+
+showUser()
 
 
