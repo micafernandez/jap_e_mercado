@@ -44,7 +44,7 @@ function sortProducts(criteria, array){
 
 
                 if (((minPrecio == undefined) || (minPrecio != undefined && parseInt(product.soldCount) >= minPrecio)) &&
-                ((maxPrecio == undefined) || (maxPrecio != undefined && parseInt(product.soldCount) <= maxCost))){
+                ((maxPrecio == undefined) || (maxPrecio != undefined && parseInt(product.cost) <= maxPrecio))){
     
                htmlContentToAppend +=         `
                  <a href="product-info.html" class="list-group-item list-group-item-action">
@@ -103,8 +103,8 @@ function sortProducts(criteria, array){
         });
 
         document.getElementById("clearRangeFilter").addEventListener("click", function(){
-            document.getElementById("rangeFiltersoldCountMin").value = "";
-            document.getElementById("rangeFiltersoldCountMax").value = "";
+            document.getElementById("rangeFilterminPrecio").value = "";
+            document.getElementById("rangeFiltermaxPrecio").value = "";
     
             minPrecio = undefined;
             maxPrecio = undefined;
@@ -112,11 +112,11 @@ function sortProducts(criteria, array){
             showProductsList();
         });
 
-        document.getElementById("rangeFiltersoldCount").addEventListener("click", function(){
-            //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
-            //de productos por categoría.
-            minPrecio = document.getElementById("rangeFilterPrecioMin").value;
-            maxPrecio = document.getElementById("rangeFilterPrecioMax").value;
+        document.getElementById("rangeFilterPrecio").addEventListener("click", function(){
+            //Obtengo el mínimo y máximo de los intervalos para filtrar por precio´
+            
+            minPrecio = document.getElementById("rangeFilterminPrecio").value;
+            maxPrecio = document.getElementById("rangeFiltermaxPrecio").value;
     
             if ((minPrecio != undefined) && (minPrecio != "") && (parseInt(minPrecio)) >= 0){
                 minPrecio = parseInt(minPrecio);
@@ -128,7 +128,7 @@ function sortProducts(criteria, array){
             if ((maxPrecio != undefined) && (maxPrecio != "") && (parseInt(maxPrecio)) >= 0){
                 maxPrecio= parseInt(maxPrecio);
             }
-            else{
+                else{
                 maxPrecio = undefined;
             }
     

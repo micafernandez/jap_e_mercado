@@ -48,7 +48,7 @@ var getJSONData = function(url){
 document.addEventListener("DOMContentLoaded", function(e){
 });
 
-
+// if localStorage . getItem esta vacio el nombre regirige al log in
 
 function showUser() {
 
