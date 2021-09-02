@@ -15,7 +15,7 @@ function validateForm() {
   }
 
   localStorage.setItem("userName", nombre);
-  localStorage.setItem("userPw", pass);
-}
+  // localStorage.setItem("userPw", pass);
+} 
 
 

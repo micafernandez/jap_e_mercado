@@ -46,15 +46,24 @@ var getJSONData = function(url){
 // que el documento se encuentra cargado, es decir, se encuentran todos los
 // elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-});
+});  
+
+
 
 // if localStorage . getItem esta vacio el nombre regirige al log in
+
 
 function showUser() {
 
   let usuario = localStorage.getItem("userName");
-  let htmlContentToAppend = usuario ;
-  document.getElementById("user").innerHTML += htmlContentToAppend;
+   
+  if ( localStorage.userName !== undefined  ) { 
+    let htmlContentToAppend = usuario ;
+    document.getElementById("user").innerHTML += htmlContentToAppend;
+  }
+    
+ else {  location.href="index.html"} 
+
 }
 
 showUser()

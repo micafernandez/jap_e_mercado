@@ -40,12 +40,12 @@ function sortProducts(criteria, array){
              let htmlContentToAppend = "";
     
              for( let i=0; i< currentProductsArray.length; i++) {
-                let product = currentProductsArray[i];
-
-
-                if (((minPrecio == undefined) || (minPrecio != undefined && parseInt(product.soldCount) >= minPrecio)) &&
-                ((maxPrecio == undefined) || (maxPrecio != undefined && parseInt(product.cost) <= maxPrecio))){
+                var product = currentProductsArray[i];
     
+
+        if (((minPrecio == undefined) || (minPrecio != undefined && parseInt(product.cost) >= minPrecio)) &&
+            ((maxPrecio == undefined) || (maxPrecio != undefined && parseInt(product.cost) <= maxPrecio))){
+
                htmlContentToAppend +=         `
                  <a href="product-info.html" class="list-group-item list-group-item-action">
                    <div class="row">
@@ -119,7 +119,7 @@ function sortProducts(criteria, array){
             maxPrecio = document.getElementById("rangeFiltermaxPrecio").value;
     
             if ((minPrecio != undefined) && (minPrecio != "") && (parseInt(minPrecio)) >= 0){
-                minPrecio = parseInt(minPrecio);
+                minPrecio= parseInt(minPrecio);
             }
             else{
                 minPrecio = undefined;
@@ -135,3 +135,35 @@ function sortProducts(criteria, array){
             showProductsList();
         });
     });
+
+
+
+
+
+
+    const formulario = document.querySelector("#formulario")
+    const boton = document.querySelector("#boton")
+    const resultado = document.querySelector("#resultado")
+
+const filtrar = ()=> {
+    // console.log(formulario.value);
+
+    resultado.innerHTML = " ";
+    const texto = formulario.value.toLowerCase()
+    for( let product of currentProductsArray) {
+        let name = product.name.toLowerCase();
+        if(name.indexOf(texto) !== -1) {
+
+            resultado.innerHTML += `<li>${product.name}</li>`
+
+        }
+    }
+    if(resultado.innerHTML ===""){
+        resultado.innerHTML += `<li>Resultado no encontrado</li>`
+    }
+}
+
+    boton.addEventListener("click", filtrar)
+    formulario.addEventListener("keyup", filtrar)
+
+    filtrar();
