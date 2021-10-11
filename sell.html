@@ -31,15 +31,22 @@
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
-        <div class="container d-flex flex-column flex-md-row justify-content-between">
-            <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-            <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-            <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-            <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-            <a id="user" class="py-2 d-none d-md-inline-block" href="my-profile.html">  </a>
-
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+        <div class="py-2 d-none d-md-inline-block">
+        <div class="dropdown">
+                <a  id="user" role="button" data-toggle="dropdown" class="btn btn-primary"  href="my-profile.html"></a>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                      <li><a href="my-profile.html">Mi perfil</a></li>
+                      <li><a href="cart.html">Carrito</a></li>
+                      <li><a onclick="logout()">Cerrar Sesión</a></li></ul>
+                
         </div>
+        </div>
+        </div>  
     </nav>
       <div class="container">
         <div class="text-center p-4">

@@ -140,30 +140,3 @@ function sortProducts(criteria, array){
 
 
 
-
-    const formulario = document.querySelector("#formulario")
-    const boton = document.querySelector("#boton")
-    const resultado = document.querySelector("#resultado")
-
-const filtrar = ()=> {
-    // console.log(formulario.value);
-
-    resultado.innerHTML = " ";
-    const texto = formulario.value.toLowerCase()
-    for( let product of currentProductsArray) {
-        let name = product.name.toLowerCase();
-        if(name.indexOf(texto) !== -1) {
-
-            resultado.innerHTML += `<li>${product.name}</li>`
-
-        }
-    }
-    if(resultado.innerHTML ===""){
-        resultado.innerHTML += `<li>Resultado no encontrado</li>`
-    }
-}
-
-    boton.addEventListener("click", filtrar)
-    formulario.addEventListener("keyup", filtrar)
-
-    filtrar();

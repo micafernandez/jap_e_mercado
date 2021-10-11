@@ -23,10 +23,17 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a id="user" class="py-2 d-none d-md-inline-block" href="my-profile.html">  </a>
-
-    </div>
-    
+      <div class="py-2 d-none d-md-inline-block">
+      <div class="dropdown">
+              <a  id="user" role="button" data-toggle="dropdown" class="btn btn-primary"  href="my-profile.html"></a>
+              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    <li><a href="my-profile.html">Mi perfil</a></li>
+                    <li><a href="cart.html">Carrito</a></li>
+                    <li><a onclick="logout()">Cerrar Sesión</a></li></ul>
+              
+      </div>
+      </div>
+      </div>  
   </nav>
   <main role="main">
     <div class="container mt-5">
@@ -55,6 +62,22 @@
         </dd>
 
         <dt>Imágenes ilustrativas</dt>
+
+       <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <ul class="carousel-indicators" id = "indicators">
+
+        </ul>
+        <div class="carousel-inner" id="carousel"> 
+
+        </div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span> </a>
+       </div>
+
         <dd>
           <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
           </div>

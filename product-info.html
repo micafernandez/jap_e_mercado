@@ -22,19 +22,120 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a id="user" class="py-2 d-none d-md-inline-block" href="my-profile.html">  </a>
-
-    </div>
+      <div class="py-2 d-none d-md-inline-block">
+      <div class="dropdown">
+              <a  id="user" role="button" data-toggle="dropdown" class="btn btn-primary"  href="my-profile.html"></a>
+              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    <li><a href="my-profile.html">Mi perfil</a></li>
+                    <li><a href="cart.html">Carrito</a></li>
+                    <li><a onclick="logout()">Cerrar Sesión</a></li></ul>
+              
+      </div>
+      </div>
+      </div>  
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+
+     
+     
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        
+      </div>
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+
+                <dd>
+          <h3 id="productCurrency"> </h3> <h3 id="productCost"></h3>
+        </dd>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 50%;">
+          <ol class="carousel-indicators">
+            
+          </ol>
+          <div class="carousel-inner">
+            
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <dd>
+
+       
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+
+        <dt>Productos Relacionados</dt>
+        <div class="container" id="relacionados" style="display: flex; align-items: baseline; ">
+
+        </div>        
+        <dd>
+       
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+
+        <dt>Cantidad de autos vendidos</dt>
+        <dd>
+          <p id="productsoldCount"></p>
+        </dd>
+
+     
+        <dt>Comentarios</dt>
+        <dd> 
+          <div class="container p-5" id=comentaritos>    
+          </dd>
+
+    
+         
+
+          
+          <form>
+          <div class="form-group" > 
+             <!-- era container -->
+             <dt>Agregá tu opinión</dt> <br>
+             <dt>Calificación</dt> 
+
+          <select name="OS">
+            <option value="1">1</option> 
+            <option value="2">2</option> 
+            <option value="3">3</option>
+            <option value="10">4</option> 
+            <option value="11">5</option> 
+         </select>
+         <br> <br>
+           <dt>Comentario</dt> 
+             <textarea id="newComment"  ></textarea> <br> <br>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <div id="allComments"></div>
+        </div>
+      </form>
+        
+
+      </dl>
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver todos los productos</a>
     </div>
-  </div>
+
+
+
+  </main>
+
+
+ 
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
