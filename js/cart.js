@@ -16,10 +16,13 @@ function showCarrito() {
   let i = 0;
   for (let article of productosCarrito){
     htmlToAppend += `
-    <tr> <img src="${article.src}" class = "img-fluid" style="max-width:70px!important"></td>
+    <tr><td> <img src="${article.src}"  class="rounded mx-auto d-block" style="max-width:120px!important"></td>
     <td class="align-middle">${article.name}</td>
     <td class="align-middle">${article.currency} ${article.unitCost}</td>
-    <td class="align-middle"><input type="number" min ="1" value=${article.count} id="${i}" onchange= "updateProductoSubtotal(this.value,${article.unitCost},${i},'${article.currency}')"></td>
+
+
+    <td class="align-middle"><input type="number" class="form-control quantity-input" min ="1" value=${article.count} id="${i}" onchange= "updateProductoSubtotal(this.value,${article.unitCost},${i},'${article.currency}')"></td>
+    
     
     <td class="align-middle subtotal" id="subtotal${i}">${article.currency} ${article.count *article.unitCost}</td>
     </tr><br>
@@ -40,8 +43,10 @@ function updateTotal() {
   for (let sub of subtotales){
 
     total += convertir(sub.innerHTML.split(" ")[0], parseFloat(sub.innerHTML.split(" ")[1]));
-  }
 
+  }
+  document.getElementById("total").innerHTML = "USD"+ " " +total;
+}
 
   function convertir(moneda, valor){
 
@@ -64,7 +69,7 @@ function updateTotal() {
     }
     return conversion;
   }
-}
+ 
 
 // paso el json de productos a un JS objet
 function getCarrito(url){
@@ -83,6 +88,7 @@ productosCarrito = respuesta.articles;
 showCarrito();
 
 console.log(productosCarrito);
-  })
+updateTotal() })
 
 })
+

@@ -41,15 +41,24 @@
       </div>
       </div>  
   </nav>
-   
-  
+  <main class="page">
+    <section class="shopping-cart dark">
+      <div class="container">
 
+       
+           <div class="block-heading">
+             <h2>Carrito de compras</h2>
+             <p>Aquí podrás ver tus ordenes de compra.</p>
+           </div>
+           <div class="content">
+          <div class="row">
+    
   <div class="container">
     <table class="table">
         <thead>
           <tr>
             
-
+            <th scope="col"></th>
             <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
@@ -59,13 +68,69 @@
         <tbody id="carrito">
                        
           </tbody>
-          <tbody id="total">
                        
-          </tbody>
 
         </table>
+        <div class="col-md-12 col-lg-12">
+          <div class="summary">
+            <h3>Resumen</h3>
+            
+         <!-- metodos de envío -->
+         
+         <div class="container">
 
+  <div class="row">
+    <div class="col-sm">
+      <span class="text">Envío</span>    </div>
+
+    <div class="col-sm">
+      <input type="radio" id="customRadioInline1" name="customRadioInline1" checked>
+      <label>Premium (2-5 días)</label>    </div>
+
+    <div class="col-sm">
+        <input type="radio" id="customRadioInline2" name="customRadioInline1">
+        <label>Express (5-8 días)</label>    </div>
+  
+
+  <div class="col-sm">
+      <input type="radio" id="customRadioInline2" name="customRadioInline2" >
+      <label>Standard (12 a 15 días)</label>
+    </div>        
+    
+    <br> <br>
+          <!-- direccion de envio -->
+
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <span class="text">Dirección de Envío</span>              </div>
+                  <div class="col-sm">
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Calle">              </div>
+              <div class="col-sm">
+                  <input type="text" class="form-control" id="inputAddressnumber" placeholder="Número de Puerta">
+                </div>              
+
+              <div class="col-sm">
+                  <input type="text" class="form-control" placeholder="Ciudad" id="inputCity"> </div>             
+            </div>
+
+       <br> <br>
+
+
+            <div class="col-md-12 col-lg-12"><span  class="text">Total</span><span class="price"><div id=total></div></span></div> 
+
+         
+            </div>
+
+
+
+
+
+
+ <button type="button" class="btn btn-primary btn-lg btn-block">Finalizar compra</button> 
+          </div>
    </div>
+
 
 
      
