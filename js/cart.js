@@ -1,15 +1,5 @@
-
-let productosCarrito = [];
-
-function updateProductoSubtotal(cantidad, unitCost, id, currency){
-
-  let subtotalProd = cantidad*unitCost;
-
-  document.getElementById("subtotal"+id).innerHTML= currency + " " + subtotalProd;
-
-  updateTotal();
-
-}
+cotizacionelegida = 40
+let productoselegidos = [];
 
 function showCarrito() {
   let htmlToAppend = "";
@@ -21,7 +11,7 @@ function showCarrito() {
     <td class="align-middle">${article.currency} ${article.unitCost}</td>
 
 
-    <td class="align-middle"><input type="number" class="form-control quantity-input" min ="1" value=${article.count} id="${i}" onchange= "updateProductoSubtotal(this.value,${article.unitCost},${i},'${article.currency}')"></td>
+    <td class="align-middle"><input type="number" class="form-control quantity-input" min ="1" value=${article.count} id="${i}" onchange= "actualizaSubtotalA(this.value,${article.unitCost},${i},'${article.currency}')"></td>
     
     
     <td class="align-middle subtotal" id="subtotal${i}">${article.currency} ${article.count *article.unitCost}</td>
@@ -36,7 +26,16 @@ function showCarrito() {
   document.getElementById("carrito").innerHTML = htmlToAppend;
 }
 
-function updateTotal() {
+function actualizaSubtotalA(cantidad, unitCost, id, currency){
+
+  let SubtotalA = unitCost*cantidad;
+
+  document.getElementById("subtotal"+id).innerHTML= currency + " " + SubtotalA;
+
+  actualizaTotal();
+
+}
+function actualizaTotal() {
 
   let total=0;
   let subtotales = document.getElementsByClassName("subtotal");
@@ -52,7 +51,7 @@ function updateTotal() {
 
     let conversion= valor;
     if (moneda === "UYU"){
-      conversion = valor/40;
+      conversion = valor/cotizacionelegida;
     }
     return conversion;
 
@@ -62,9 +61,9 @@ function updateTotal() {
     let arbitraje = valor;
     if (moneda !==actual){
       if(moneda ==="USD"){
-        conversion = valor/40
+        conversion = valor/cotizacionelegida
       }else{
-        conversion = valor*40;
+        conversion = valor*cotizacionelegida;
       }
     }
     return conversion;
@@ -87,8 +86,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 productosCarrito = respuesta.articles;
 showCarrito();
 
-console.log(productosCarrito);
-updateTotal() })
+actualizaTotal() })
 
 })
 

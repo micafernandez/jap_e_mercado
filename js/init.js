@@ -60,6 +60,8 @@ function showUser() {
   if ( localStorage.userName !== undefined  ) { 
     let htmlContentToAppend = usuario ;
     document.getElementById("user").innerHTML += htmlContentToAppend;
+    document.getElementById("user1").innerHTML += htmlContentToAppend;
+
   }
     
  else {  location.href="index.html"} 

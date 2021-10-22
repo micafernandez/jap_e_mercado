@@ -46,21 +46,23 @@ function sortProducts(criteria, array){
         if (((minPrecio == undefined) || (minPrecio != undefined && parseInt(product.cost) >= minPrecio)) &&
             ((maxPrecio == undefined) || (maxPrecio != undefined && parseInt(product.cost) <= maxPrecio))){
 
-               htmlContentToAppend +=         `
-                 <a href="product-info.html" class="list-group-item list-group-item-action">
-                   <div class="row">
-                    <div class="col-3">
-                            <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                            </div>
-                            <div class="col">
-                             <div class="d-flex w-100 justify-content-between">
-                                <h4 class="mb-1">`+ product.name +`</h4> <h3> ` + product.currency + `  ` + product.cost + ` </h3>
-                                 <small class="text-muted">` + product.soldCount +` artículos </small>
-                            </div>                         <p class="mb-1">` + product.description + `</p>
-                        </div>
-                    </div>
-               </a>
-               ` 
+               htmlContentToAppend +=      
+               `
+               
+               <div class="col-md-6"> 
+               <a href="product-info.html"  class="card mb-4 shadow-sm custom-card">
+               
+                 <img class="bd-placeholder-img card-img-top"  src="${product.imgSrc}"> 
+                              <br>
+                 <h3 class="col d-flex justify-content-center" >${product.name}</h3>
+                 <h5  class="col d-flex justify-content-center"> ` + product.currency + `  ` + product.cost + ` </h5>
+                   
+                 <div class="card-body">                 
+                 <p class="card-text" >${product.description}</p>                 
+                 </div>
+                 </a>
+             </div>  `;
+
             }
                document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
                     }
